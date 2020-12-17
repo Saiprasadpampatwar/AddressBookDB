@@ -160,4 +160,38 @@ mysql> select count(*) from Address_Book where state='MP';
 |        1 |
 +----------+
 
+UC8: Ability to retrieve entries sorted alphabetically by Person’s name for a given city
 
+mysql> insert into Address_Book values('chetan','zambare','jamkheed','jalgaon','maharashtra',431602,788333,'chetan@gmail');
+
+
+mysql> insert into Address_Book values('Neeraj','Aadwani','jamkheed','Bhopal','MP',431112,224833,'neeraj@gmail');
+
+
+mysql> select * from Address_Book;
++-----------+-----------+---------------------+---------+-------------+--------+--------------+------------------+
+| firstname | lastname  | address             | city    | state       | zip    | phone_number | email            |
++-----------+-----------+---------------------+---------+-------------+--------+--------------+------------------+
+| sai       | Pampatwar | wadi                | nanded  | maharashtra | 431716 |        89875 | pam@gmail        |
+| Shristi   | Gupta     | B6 Navlakha         | Indore  | MP          |  40020 |       916565 | sris@gmail.com   |
+| Mark      | King      | F-88 Silicon Valley | Tolouse | California  |  20405 |    143434345 | markz@rediff.com |
+| chetan    | zambare   | jamkheed            | jalgaon | maharashtra | 431602 |       788333 | chetan@gmail     |
+| Neeraj    | Aadwani   | jamkheed            | Bhopal  | MP          | 431112 |       224833 | neeraj@gmail     |
++-----------+-----------+---------------------+---------+-------------+--------+--------------+------------------+
+
+mysql> select * from Address_Book where state='MP' order by firstname;
++-----------+----------+-------------+--------+-------+--------+--------------+----------------+
+| firstname | lastname | address     | city   | state | zip    | phone_number | email          |
++-----------+----------+-------------+--------+-------+--------+--------------+----------------+
+| Neeraj    | Aadwani  | jamkheed    | Bhopal | MP    | 431112 |       224833 | neeraj@gmail   |
+| Shristi   | Gupta    | B6 Navlakha | Indore | MP    |  40020 |       916565 | sris@gmail.com |
++-----------+----------+-------------+--------+-------+--------+--------------+----------------+
+
+
+mysql> select * from Address_Book where state='maharashtra' order by firstname;
++-----------+-----------+----------+---------+-------------+--------+--------------+--------------+
+| firstname | lastname  | address  | city    | state       | zip    | phone_number | email        |
++-----------+-----------+----------+---------+-------------+--------+--------------+--------------+
+| chetan    | zambare   | jamkheed | jalgaon | maharashtra | 431602 |       788333 | chetan@gmail |
+| sai       | Pampatwar | wadi     | nanded  | maharashtra | 431716 |        89875 | pam@gmail    |
++-----------+-----------+----------+---------+-------------+--------+--------------+--------------+
