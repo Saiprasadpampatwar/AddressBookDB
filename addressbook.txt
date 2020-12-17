@@ -78,3 +78,17 @@ mysql> select * from Address_Book;
 | sai       | prasad   | wadi     | nanded  | maharashtra | 431716 |        89875 | pam@gmail    |
 | chetan    | zambare  | jamkheed | jalgaon | maharashtra | 431602 |       788333 | chetan@gmail |
 +-----------+----------+----------+---------+-------------+--------+--------------+--------------+
+
+UC4: Ability to Edit Address Book
+
+mysql> update Address_Book set lastname = 'Pampatwar' where firstname = 'sai';
+
+mysql> select * from Address_Book;
++-----------+-----------+----------+---------+-------------+--------+--------------+--------------+
+| firstname | lastname  | address  | city    | state       | zip    | phone_number | email        |
++-----------+-----------+----------+---------+-------------+--------+--------------+--------------+
+| sai       | Pampatwar | wadi     | nanded  | maharashtra | 431716 |        89875 | pam@gmail    |
+| chetan    | zambare   | jamkheed | jalgaon | maharashtra | 431602 |       788333 | chetan@gmail |
++-----------+-----------+----------+---------+-------------+--------+--------------+--------------+
+
+
