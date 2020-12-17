@@ -133,3 +133,31 @@ mysql> select * from Address_Book where state='maharashtra';
 | sai       | Pampatwar | wadi    | nanded | maharashtra | 431716 |        89875 | pam@gmail |
 +-----------+-----------+---------+--------+-------------+--------+--------------+-----------+
 
+UC7: Ability to understand the size of address book by City and State
+
+mysql> select * from Address_Book;
++-----------+-----------+---------------------+---------+-------------+--------+--------------+------------------+
+| firstname | lastname  | address             | city    | state       | zip    | phone_number | email            |
++-----------+-----------+---------------------+---------+-------------+--------+--------------+------------------+
+| sai       | Pampatwar | wadi                | nanded  | maharashtra | 431716 |        89875 | pam@gmail        |
+| Shristi   | Gupta     | B6 Navlakha         | Indore  | MP          |  40020 |       916565 | sris@gmail.com   |
+| Mark      | King      | F-88 Silicon Valley | Tolouse | California  |  20405 |    143434345 | markz@rediff.com |
++-----------+-----------+---------------------+---------+-------------+--------+--------------+------------------+
+
+
+mysql> select count(*) from Address_Book where city='nanded';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+
+
+mysql> select count(*) from Address_Book where state='MP';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+
+
