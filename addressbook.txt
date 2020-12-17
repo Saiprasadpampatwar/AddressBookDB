@@ -64,3 +64,17 @@ mysql> desc Address_Book;
 | phone_number | int unsigned | NO   |     | NULL    |       |
 | email        | varchar(50)  | YES  |     | NULL    |       |
 +--------------+--------------+------+-----+---------+-------+
+
+UC3: Ability to insert new Contacts to Address Book
+
+mysql> insert into Address_Book values('sai','prasad','wadi','nanded','maharashtra',431716,89875,'pam@gmail');
+
+mysql> insert into Address_Book values('chetan','zambare','jamkheed','jalgaon','maharashtra',431602,788333,'chetan@gmail');
+
+mysql> select * from Address_Book;
++-----------+----------+----------+---------+-------------+--------+--------------+--------------+
+| firstname | lastname | address  | city    | state       | zip    | phone_number | email        |
++-----------+----------+----------+---------+-------------+--------+--------------+--------------+
+| sai       | prasad   | wadi     | nanded  | maharashtra | 431716 |        89875 | pam@gmail    |
+| chetan    | zambare  | jamkheed | jalgaon | maharashtra | 431602 |       788333 | chetan@gmail |
++-----------+----------+----------+---------+-------------+--------+--------------+--------------+
