@@ -35,3 +35,32 @@ mysql> show databases;
 
 mysql> use addressbook_service;
 Database changed
+
+
+#UC2: Create table Address_Book inside addressbook_service databse
+
+mysql> create table Address_Book(
+    -> firstname varchar(50) not null,
+    -> lastname varchar(50) not null,
+    -> address varchar(150),
+    -> city varchar (25),
+    -> state varchar (25),
+    -> zip int unsigned,
+    -> phone_number int unsigned not null,
+    -> email varchar(50)
+    -> );
+Query OK, 0 rows affected (2.33 sec)
+
+mysql> desc Address_Book;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| firstname    | varchar(50)  | NO   |     | NULL    |       |
+| lastname     | varchar(50)  | NO   |     | NULL    |       |
+| address      | varchar(150) | YES  |     | NULL    |       |
+| city         | varchar(25)  | YES  |     | NULL    |       |
+| state        | varchar(25)  | YES  |     | NULL    |       |
+| zip          | int unsigned | YES  |     | NULL    |       |
+| phone_number | int unsigned | NO   |     | NULL    |       |
+| email        | varchar(50)  | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
