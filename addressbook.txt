@@ -217,3 +217,12 @@ mysql> select * from Address_Book;
 | Neeraj    | Aadwani   | jamkheed            | Bhopal  | MP          | 431112 |       224833 | neeraj@gmail     | NULL | friends |
 +-----------+-----------+---------------------+---------+-------------+--------+--------------+------------------+------+---------+
 
+UC10: Ability to get number of contact persons i.e. count by type
+
+mysql> select count(*) as Count from Address_Book where type='family';
++-------+
+| Count |
++-------+
+|     3 |
++-------+
+
