@@ -1,0 +1,37 @@
+# UC1: Create DataBase addressbook_service
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| payroll_service    |
+| payrollservice     |
+| performance_schema |
+| pets               |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+
+mysql> create database addressbook_service;
+
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| addressbook_service |
+| information_schema  |
+| mysql               |
+| payroll_service     |
+| payrollservice      |
+| performance_schema  |
+| pets                |
+| sakila              |
+| sys                 |
+| world               |
++---------------------+
+
+mysql> use addressbook_service;
+Database changed
