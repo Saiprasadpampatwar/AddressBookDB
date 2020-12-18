@@ -350,3 +350,65 @@ mysql> select * from contact_details;
 |         3 | nagar    | aurangabad | bihar       | 45644 | 9991777772 |
 |         4 | mirzapur | vizag      | Telangana   | 64325 | 9888897772 |
 +-----------+----------+------------+-------------+-------+------------+
+
+UC13: Ensure all retrieve queries done especially
+
+mysql> select person_name from person_details inner join contact_details
+    -> on person_details.person_id=contact_details.person_id
+    -> where contact_details.state='maharashtra';
++-------------+
+| person_name |
++-------------+
+| Saiprasad   |
+| Dnyanesh    |
++-------------+
+
+mysql> select person_name from person_details inner join contact_details
+    -> on person_details.person_id=contact_details.person_id
+    -> where contact_details.city='nanded';
++-------------+
+| person_name |
++-------------+
+| Saiprasad   |
+| Dnyanesh    |
++-------------+
+
+mysql> select count(person_name) as COUNT_BY_CITY from person_details inner join contact_details
+    -> on person_details.person_id=contact_details.person_id
+    -> where contact_details.city='nanded';
++---------------+
+| COUNT_BY_CITY |
++---------------+
+|             2 |
++---------------+
+
+mysql> select count(person_name) as COUNT_BY_CITY from person_details inner join contact_details
+    ->  on person_details.person_id=contact_details.person_id
+    -> where contact_details.state='maharashtra';
++---------------+
+| COUNT_BY_CITY |
++---------------+
+|             2 |
++---------------+
+
+mysql>  select person_name from person_details inner join contact_details
+    -> on person_details.person_id=contact_details.person_id
+    -> where contact_details.city='nanded'
+    -> order by person_details.person_name;
++-------------+
+| person_name |
++-------------+
+| Dnyanesh    |
+| Saiprasad   |
++-------------+
+
+mysql> select person_name from person_details inner join contact_details
+    -> on person_details.person_id=contact_details.person_id
+    -> where contact_details.state='maharashtra'
+    -> order by person_details.person_name;
++-------------+
+| person_name |
++-------------+
+| Dnyanesh    |
+| Saiprasad   |
++-------------+
